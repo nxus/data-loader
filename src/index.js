@@ -178,8 +178,8 @@ export default class DataLoader {
   // Internal
   
   _modelImport(model_id, results, opts) {
-    this.on('models.'+model_id, (args) => {return args})
-    this.on('model.'+model_id, (args) => {return args})
+    this.once('models.'+model_id, (args) => {return args})
+    this.once('model.'+model_id, (args) => {return args})
     if (opts === undefined) opts = _defaultImportOptions
 
     if(typeof opts.strict != 'undefined' && opts.strict === false) {
